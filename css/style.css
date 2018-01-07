@@ -44,15 +44,15 @@ body {
 }
 
 .key-caption {
-    margin-top: 62px;
+    margin-top: 20px;
 }
 
 .key-caption p {
-    font-size: 144px;
+    font-size: 60px;
 }
 
 .key-caption span {
-    font-size: 20px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 3px;
 }
