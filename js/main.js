@@ -35,6 +35,23 @@ function playOnClick(e) {
 
 }
 
+[...keys].forEach(key => key.addEventListener('touchstart', playOnTouch));
+
+function playOnTouch(e) {
+
+    var sample = this.getAttribute('data-key');
+    var audio = document.querySelector(`audio[data-key="${sample}"]`)
+
+    
+    if (!sample) {
+        return;
+    }
+    
+    audio.currentTime = 0;
+    audio.play();
+    
+    this.classList.add('playing');
+
 
 
 function removeTransition(e) {
