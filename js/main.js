@@ -40,7 +40,7 @@ function playOnClick(e) {
 function playOnTouch(e) {
 
     var sample = this.getAttribute('data-key');
-    var audio = document.querySelector(`audio[data-key="${sample}"]`)
+    var audio = document.querySelector(`audio[data-key="${sample}"]`);
 
     
     if (!sample) {
@@ -52,7 +52,7 @@ function playOnTouch(e) {
     
     this.classList.add('playing');
 
-
+}
 
 function removeTransition(e) {
     if (e.propertyName !== 'transform') return;

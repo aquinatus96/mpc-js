@@ -1,4 +1,4 @@
-@media (min-width: 1200px) {
+@media screen and (max-device-width: 1199px) {
     .keys {
         width: 100%;
         max-width: 88vw;
@@ -22,7 +22,7 @@
     }
 }
 
-@media (max-width: 1199px) {
+@media screen and (max-device-width: 991px) {
     .keys {
         width: 100%;
         max-width: 88vw;
@@ -46,7 +46,7 @@
     }
 }
 
-@media (max-width: 991px) {
+@media screen and (max-device-width: 768px) {
     .keys {
         width: 100%;
         max-width: 88vw;
@@ -70,31 +70,7 @@
     }
 }
 
-@media (max-width: 768px) {
-    .keys {
-        width: 100%;
-        max-width: 88vw;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        float: left;
-    }
-
-    .key {
-        width: 20vw;
-        height: 20vw;
-    }
-
-    .key-caption p {
-        display: none;
-    }
-
-    .key-caption span {
-        font-size: 1.6vw;
-    }
-}
-
-@media (max-width: 480px) {
+@media screen and (max-device-width: 480px) {
     .keys {
         width: 100%;
         max-width: 80vw;
