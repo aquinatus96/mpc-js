@@ -1,44 +1,70 @@
-@media (max-width: 360px) {
+@media (min-width: 1200px) {
     .keys {
-        margin: -200px 0 0 -190px;
-        height: 390px;
-        width: 390px;
+        width: 100%;
+        max-width: 88vw;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        float: left;
     }
-    
-    .keys .key {
-        width: 18vw;
-        height: 18vw;
-        border: 2px solid #8c6339;
-        margin: 6px;
+
+    .key {
+        width: 20vw;
+        height: 20vw;
     }
-    
+
     .key-caption p {
         display: none;
     }
-    
+
     .key-caption span {
-        font-size: 2.2vw;
+        font-size: 1.6vw;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1199px) {
     .keys {
-        margin: -180px 0 0 -152px;
-        height: 390px;
-        width: 390px;
+        width: 100%;
+        max-width: 88vw;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        float: left;
     }
-    
-    .keys .key {
-        width: 18vw;
-        height: 18vw;
-        border: 2px solid #8c6339;
-        margin: 6px;
+
+    .key {
+        width: 20vw;
+        height: 20vw;
     }
-    
+
     .key-caption p {
         display: none;
     }
-    
+
+    .key-caption span {
+        font-size: 1.6vw;
+    }
+}
+
+@media (max-width: 991px) {
+    .keys {
+        width: 100%;
+        max-width: 88vw;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        float: left;
+    }
+
+    .key {
+        width: 20vw;
+        height: 20vw;
+    }
+
+    .key-caption p {
+        display: none;
+    }
+
     .key-caption span {
         font-size: 1.6vw;
     }
@@ -46,24 +72,49 @@
 
 @media (max-width: 768px) {
     .keys {
-        margin: -200px 0 0 -360px;
-        height: 750px;
-        width: 750px;
+        width: 100%;
+        max-width: 88vw;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        float: left;
     }
-    
-    .keys .key {
-        width: 18vw;
-        height: 18vw;
-        border: 2px solid #8c6339;
-        margin: 6px;
+
+    .key {
+        width: 20vw;
+        height: 20vw;
     }
-    
+
     .key-caption p {
         display: none;
     }
-    
+
     .key-caption span {
-        font-size: 1.8vw;
+        font-size: 1.6vw;
     }
 }
 
+@media (max-width: 480px) {
+    .keys {
+        width: 100%;
+        max-width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        float: left;
+    }
+
+    .key {
+        width: 18vw;
+        height: 18vw;
+    }
+
+    .key-caption p {
+        display: none;
+    }
+
+    .key-caption span {
+        font-size: 1.6vw;
+    }
+
+}
