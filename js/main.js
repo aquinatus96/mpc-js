@@ -7,17 +7,40 @@ window.addEventListener('keydown', function (e) {
         return;
     }
     audio.currentTime = 0;
-    audio.play()
+    audio.play();
 
     key.classList.add('playing');
 
 });
 
+var keys = document.querySelectorAll('.key');
+
+
+[...keys].forEach(key => key.addEventListener('click', playOnClick));
+
+function playOnClick(e) {
+
+    var sample = this.getAttribute('data-key');
+    var audio = document.querySelector(`audio[data-key="${sample}"]`)
+
+    
+    if (!sample) {
+        return;
+    }
+    
+    audio.currentTime = 0;
+    audio.play();
+    
+    this.classList.add('playing');
+
+}
+
+
+
 function removeTransition(e) {
-   if (e.propertyName !== 'transform') return;
+    if (e.propertyName !== 'transform') return;
     console.log(e.propertyName);
     this.classList.remove('playing');
 }
 
-var keys = document.querySelectorAll('.key');
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
