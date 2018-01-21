@@ -1,3 +1,5 @@
+window.addEventListener('keydown', playOnKey);
+
 var playOnKey = function (e) {
 
     var audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
@@ -12,48 +14,55 @@ var playOnKey = function (e) {
     key.classList.add('playing');
 };
 
-window.addEventListener('keydown', playOnKey);
-
 var keys = document.querySelectorAll('.key');
 
 
-keys.forEach(key => key.addEventListener('click', playOnClick));
+// chaning a click on desktop to touch on mobile
 
-function playOnClick(e) {
+if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 
-    var sample = this.getAttribute('data-key');
-    var audio = document.querySelector(`audio[data-key="${sample}"]`)
+    keys.forEach(key => key.addEventListener('click', playOnClick));
+
+    function playOnClick(e) {
+
+        var sample = this.getAttribute('data-key');
+        var audio = document.querySelector(`audio[data-key="${sample}"]`)
 
 
-    if (!sample) {
-        return;
+        if (!sample) {
+            return;
+        }
+
+        audio.currentTime = 0;
+        audio.play();
+
+        this.classList.add('playing');
+
     }
 
-    audio.currentTime = 0;
-    audio.play();
+} else {
 
-    this.classList.add('playing');
+    keys.forEach(key => key.addEventListener('touchstart', playOnTouch));
 
-}
+    function playOnTouch(e) {
 
-keys.forEach(key => key.addEventListener('touchstart', playOnTouch));
-
-function playOnTouch(e) {
-
-    var sample = this.getAttribute('data-key');
-    var audio = document.querySelector(`audio[data-key="${sample}"]`);
+        var sample = this.getAttribute('data-key');
+        var audio = document.querySelector(`audio[data-key="${sample}"]`);
 
 
-    if (!sample) {
-        return;
+        if (!sample) {
+            return;
+        }
+
+        audio.currentTime = 0;
+        audio.play();
+
+        this.classList.add('playing');
+
     }
-
-    audio.currentTime = 0;
-    audio.play();
-
-    this.classList.add('playing');
-
 }
+
+
 
 function removeTransition(e) {
     if (e.propertyName !== 'transform') return;
@@ -66,7 +75,7 @@ keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 
 /* INPUT MODE SCRIPTS start */
 
-//input mode turn on and off
+// input mode turn on and off
 
 var btnInputFile = document.querySelector('.file-input');
 
@@ -75,9 +84,6 @@ btnInputFile.addEventListener('click', function () {
     var key = document.getElementsByClassName('key');
     var keyIcon = document.querySelectorAll('.key .fa');
     var keyCaption = document.getElementsByClassName('key-caption');
-
-
-
 
     if (btnInputFile.classList.contains('off')) {
 
@@ -88,10 +94,10 @@ btnInputFile.addEventListener('click', function () {
         window.removeEventListener('keydown', playOnKey);
         keys.forEach(key => key.removeEventListener('click', playOnClick));
         keys.forEach(key => key.removeEventListener('touchstart', playOnTouch));
-        
-        
-                    var input = document.createElement('input');
-            input.setAttribute('type', 'file');
+
+
+        var input = document.createElement('input');
+        input.setAttribute('type', 'file');
 
 
         for (var i = 0; i < key.length; i++) {
