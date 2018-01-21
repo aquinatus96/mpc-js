@@ -20,28 +20,7 @@ var keys = document.querySelectorAll('.key');
 
 // chaning a click on desktop to touch on mobile
 
-if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-
-    keys.forEach(key => key.addEventListener('click', playOnClick));
-
-    function playOnClick(e) {
-
-        var sample = this.getAttribute('data-key');
-        var audio = document.querySelector(`audio[data-key="${sample}"]`)
-
-
-        if (!sample) {
-            return;
-        }
-
-        audio.currentTime = 0;
-        audio.play();
-
-        this.classList.add('playing');
-
-    }
-
-} else {
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 
     keys.forEach(key => key.addEventListener('touchstart', playOnTouch));
 
@@ -60,7 +39,32 @@ if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navig
 
         this.classList.add('playing');
 
+        console.log('this touched');
+
     }
+
+} else if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+
+    keys.forEach(key => key.addEventListener('click', playOnClick));
+
+    function playOnClick(e) {
+
+        var sample = this.getAttribute('data-key');
+        var audio = document.querySelector(`audio[data-key="${sample}"]`);
+
+
+        if (!sample) {
+            return;
+        }
+
+        audio.currentTime = 0;
+        audio.play();
+
+        this.classList.add('playing');
+
+        console.log('this clicked');
+    }
+
 }
 
 
