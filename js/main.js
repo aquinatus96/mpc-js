@@ -1,5 +1,3 @@
-window.addEventListener('keydown', playOnKey);
-
 var playOnKey = function (e) {
 
     var audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
@@ -13,6 +11,9 @@ var playOnKey = function (e) {
 
     key.classList.add('playing');
 };
+
+window.addEventListener('keydown', playOnKey);
+
 
 var keys = document.querySelectorAll('.key');
 
