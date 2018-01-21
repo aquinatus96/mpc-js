@@ -1,13 +1,15 @@
+/* General Styles START */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-      -webkit-touch-callout: none;
+    -webkit-touch-callout: none;
     -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
 }
 
@@ -17,6 +19,9 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+/* General Styles END */
+
+/* Key Styles START */
 
 .keys {
     position: absolute;
@@ -29,13 +34,16 @@ body {
     width: 9vw;
     height: 9vw;
     float: left;
-    border: 0.2vw solid #8c6339;
-    color: #eee;
     margin: 1vw;
-    text-align: center;
     transition: all .07s ease;
-    background: radial-gradient(ellipse at center, rgb(20,20,20) 20%, rgba(167,123,84,0.025) 100%);
     cursor: pointer;
+}
+
+.key-style {
+    border: 0.2vw solid #8c6339;
+    background: radial-gradient(ellipse at center, rgb(20, 20, 20) 20%, rgba(167, 123, 84, 0.025) 100%);
+    text-align: center;
+    color: #eee;
 }
 
 .playing {
@@ -63,3 +71,55 @@ body {
     text-transform: uppercase;
     letter-spacing: 3px;
 }
+
+/* General Styles END */
+
+/* File input Styles START */
+
+.file-input {
+    width: 220px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.off {
+    background-color: #8c6339;
+    color: #eee;
+
+}
+
+.on {
+    color: #8c6339;
+    background-color: #eee;
+}
+
+/* File input Styles END /
+
+/* Input Mode START */
+
+.input-mode {
+    border: 0.1vw dashed #8c6339;
+    transition: all .2s ease-out;
+}
+
+.input-mode:hover {
+    border: 0.1vw dashed #eee;
+    color: #eee;
+}
+
+.fa.fa-file-audio-o {
+    display: inherit;
+    text-align: center;
+    line-height: 9vw;
+    font-size: 2.5vw;
+}
+
+.disable,
+.disable.fa.fa-file-audio-o {
+    display: none;
+}
+
+/* Input Mode END */
