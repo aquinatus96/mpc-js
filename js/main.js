@@ -14,7 +14,6 @@ var playOnKey = function (e) {
 
 window.addEventListener('keydown', playOnKey);
 
-
 var keys = document.querySelectorAll('.key');
 
 
@@ -22,13 +21,12 @@ var keys = document.querySelectorAll('.key');
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 
-    keys.forEach(key => key.addEventListener('touchstart', playOnTouch));
+    keys.forEach(key => key.addEventListener('mousedown', playOnTouch));
 
     function playOnTouch(e) {
 
         var sample = this.getAttribute('data-key');
         var audio = document.querySelector(`audio[data-key="${sample}"]`);
-
 
         if (!sample) {
             return;
@@ -38,7 +36,6 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
         audio.play();
 
         this.classList.add('playing');
-
         console.log('this touched');
 
     }
@@ -51,7 +48,6 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 
         var sample = this.getAttribute('data-key');
         var audio = document.querySelector(`audio[data-key="${sample}"]`);
-
 
         if (!sample) {
             return;
